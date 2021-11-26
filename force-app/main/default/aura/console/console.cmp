@@ -1,0 +1,35 @@
+<aura:component>
+
+    <aura:attribute name="lines" type="List" default="[]"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:handler name="change" value="{!v.lines}" action="{!c.scroll}"/>
+
+    <div class="slds-box">
+        <lightning:card title="{!v.title != null ? v.title : 'Output'}">
+            <ul class="slds-box slds-bg-black" aura:id="list">
+                <aura:iteration items="{!v.lines}" var="line">
+                    <li class="slds-color-green">
+                        <p>
+                            {!line.date}
+                        </p>
+                        <p>
+                            > {!line.message}
+                        </p>
+                    </li>
+                    
+                </aura:iteration>
+
+                <aura:if isTrue="{!v.lines.length == 0}">
+                    <li class="slds-color-green">
+                        <p>></p>
+                    </li>
+                </aura:if>
+            </ul>
+
+            <aura:set attribute="footer">
+                <lightning:button label="Clear" variant="neutral" onclick="{!c.clear}"/>
+            </aura:set>
+        </lightning:card>
+    </div>
+    
+</aura:component>	

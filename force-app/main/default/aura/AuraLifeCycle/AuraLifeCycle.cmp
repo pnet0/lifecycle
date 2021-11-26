@@ -1,0 +1,62 @@
+<aura:component>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}"></aura:handler>
+    <aura:attribute name="added" type="Boolean" default="false" ></aura:attribute>
+    <aura:attribute name="showDescription" type="Boolean" default="true" ></aura:attribute>
+
+    <div class="slds-box slds-m-vertical--large">
+        <lightning:card title="Paulo Neto">
+            <aura:set attribute="actions">
+                <lightning:icon iconName="action:share_link" alternativeText="Share" title="Share" size="xx-small" class="slds-m-horizontal--xxx-small"></lightning:icon>
+                <lightning:icon iconName="action:call" alternativeText="Call" title="Call" size="xx-small" class="slds-m-horizontal--xxx-small"></lightning:icon>
+                <lightning:icon iconName="action:more" alternativeText="More" title="More" size="xx-small" class="slds-m-horizontal--xxx-small"></lightning:icon>
+            </aura:set>
+            <div class="avatar-container slds-text-align--center">
+                <lightning:avatar variant="circle" src="https://developer.salesforce.com/docs/component-library/app/images/examples/avatar1.jpg" initials="PN" fallbackIconName="standard:person_account" alternativeText="Paulo Neto" class="avatar-size"></lightning:avatar>
+            </div>
+
+            <hr></hr>
+
+            <div class="slds-region_narrow" style="width:360px">
+                <dl class="slds-dl_horizontal">
+
+
+                    <dt class="slds-dl_horizontal__label"><b>Nome:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">Paulo Neto</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Idade:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">22</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Empresa:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">Engineering</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Email:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">jose.neto@engdb.com.br</dd>
+
+                </dl>
+            </div>
+
+            <div class="slds-no-flex slds-text-align--right">
+                <lightning:icon onclick="{!c.handleDescription}" iconName="{!v.showDescription ? 'utility:chevrondown' : 'utility:chevronright'}" alternativeText="More" title="More" size="xx-small" class="slds-m-horizontal--xxx-small"></lightning:icon>
+            </div>
+
+            <aura:if isTrue="{!v.showDescription}">
+                <p>
+                    Desenvolvedor Salesforce com experiência em implantações nas nuvens Sales, Service e Community. Adora trabalhar com front-end e suas tecnologias. 
+                </p>
+            </aura:if>
+            
+
+            <aura:set attribute="footer">
+                <lightning:button label="{!v.added ? 'Remove' : 'Adicionar'}" 
+                iconName="{!v.added ? 'utility:dash' : 'utility:add'}" 
+                iconPosition="left" 
+                variant="{!v.added ? 'destructive' : 'brand'}" 
+                onclick="{!c.handleAdd}"></lightning:button>
+            </aura:set>
+        </lightning:card>
+
+    </div>
+    
+
+</aura:component>	

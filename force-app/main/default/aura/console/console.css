@@ -1,0 +1,14 @@
+.THIS .slds-bg-black{
+    background-color: black;
+}
+
+.THIS .slds-color-green{
+    color: #39f36d;
+    font-family: monospace;
+}
+
+.THIS ul.slds-box {
+    min-height: 230px;
+    max-height: 230px;
+    overflow-y: auto;
+}

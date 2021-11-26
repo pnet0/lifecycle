@@ -1,0 +1,53 @@
+<template>
+    
+    <div class="slds-box slds-m-vertical--large">
+        <lightning-card title="Paulo Neto">
+
+            <lightning-icon icon-name="action:share_link" alternative-text="Share" title="Share" size="xx-small" class="slds-m-horizontal--xxx-small" slot="actions"></lightning-icon>
+            <lightning-icon icon-name="action:call" alternative-text="Call" title="Call" size="xx-small" class="slds-m-horizontal--xxx-small" slot="actions"></lightning-icon>
+            <lightning-icon icon-name="action:more" alternative-text="More" title="More" size="xx-small" class="slds-m-horizontal--xxx-small" slot="actions"></lightning-icon>
+
+            <div class="avatar-container slds-text-align--center">
+                <lightning-avatar variant="circle" src="https://developer.salesforce.com/docs/component-library/app/images/examples/avatar1.jpg" initials="PN" fallback-icon-name="standard:person_account" alternative-text="Paulo Neto" class="avatar-size"></lightning-avatar>
+            </div>
+
+            <hr></hr>
+
+            <div class="slds-region_narrow" style="width:360px">
+
+                <dl class="slds-dl_horizontal">
+
+
+                    <dt class="slds-dl_horizontal__label"><b>Nome:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">Paulo Neto</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Idade:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">22</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Empresa:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">Engineering</dd>
+
+                    <dt class="slds-dl_horizontal__label"><b>Email:</b></dt>
+                    <dd class="slds-dl_horizontal__detail">jose.neto@engdb.com.br</dd>
+
+                </dl>
+            </div>
+
+            <div class="slds-no-flex slds-text-align--right">
+                <lightning-icon onclick={handleDescription} icon-name={descriptionIcon} alternative-text="More" title="More" size="xx-small" class="slds-m-horizontal--xxx-small"></lightning-icon>
+            </div>
+
+            <p if:true={showDescription}>
+                Desenvolvedor Salesforce com experiência em implantações nas nuvens Sales, Service e Community. Adora trabalhar com front-end e suas tecnologias. 
+            </p>
+            
+            <lightning-button label={buttonLabel} 
+                icon-name={buttonIcon}
+                icon-position="left" 
+                variant={buttonVariation}
+                onclick={handleAdd} slot="footer"></lightning-button>
+            
+        </lightning-card>
+        
+    </div>
+</template>
